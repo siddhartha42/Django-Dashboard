@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: #fff;
+            display:grid;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #272727;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            overflow-y: auto;
+            max-height: 80vh; /* Adjust the maximum height as needed */
+        }
+
+        h3{
+            text-align: center;
+            font-weight: bold;
+            text-shadow: #45a049;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4caf50;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            background-color: #333;
+            color: #fff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+</head>
+<body>
+    <h3>Signup Form</h3>
+    <form action="/signup" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        <label for="">Username</label>
+        <input type="text" id="username" name="username" placeholder="create a username (only letters and numbers)" required>
+        <br>
+
+        <label for="">First Name</label>
+        <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+        <br>
+
+        <label for="">Last Name</label>
+        <input type="text" id="lname" name="lname" placeholder="Enter your last name" required>
+        <br>
+
+        <label for="">Profile Picture</label>
+        <input type="file" id="pic" name="pic" accept="image/*" placeholder="select jpg or png file">
+        <br>
+
+        <label for="">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        <br>
+
+         <!-- Dropdown menu for selecting User Type -->
+        <label for="user_type">Select User Type:</label>
+        <select id="user_type" name="user_type" required>
+            <option value="patient">Patient</option>
+            <option value="doctor">Doctor</option>
+        </select>
+
+        <h4>Address</h4>
+
+        <label for="line1">Address Line 1</label>
+        <input type="text" id="line1" name="line1" placeholder="Enter address line 1" required>
+        <br>
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" placeholder="Enter your city" required>
+        <br>
+
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" placeholder="Enter your state" required>
+        <br>
+
+        <label for="pincode">Pincode</label>
+        <input type="text" id="pincode" name="pincode" placeholder="Enter your pincode" required>
+        <br>
+
+        <label for="">Password</label>
+        <input type="password" id="pass1" name="pass1" placeholder="create a password" required>
+        <br>
+
+        <label for="">Confirm Password</label>
+        <input type="password" id="pass2" name="pass2" placeholder="enter same password again" required>
+        <br>
+
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>
