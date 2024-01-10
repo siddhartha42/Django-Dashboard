@@ -18,15 +18,19 @@ cd python-dashboard
 
 # Set Up a Virtual Environment:
 install virtualenv
+
 virtualenv venv
+
 venv/Scripts/activate
 
 # Install Required Packages:
 pip install django
+
 pip install pillow
 
 # Apply Database Migrations:
 python manage.py makemigrations
+
 python manage.py migrate
 
 # Run the Development Server:
